@@ -56,3 +56,6 @@ project.lock.json
 .env
 .env.*
 !.env.example
+
+## Local admin/database scripts with secrets
+scripts/admin/*.local.sql

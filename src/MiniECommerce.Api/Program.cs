@@ -35,6 +35,11 @@ public class Program
             throw new InvalidOperationException("JWT secret key is missing.");
         }
 
+        if (jwtOptions.SecretKey.Length < 32)
+        {
+            throw new InvalidOperationException("JWT secret key must be at least 32 characters.");
+        }
+
         builder.Services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
